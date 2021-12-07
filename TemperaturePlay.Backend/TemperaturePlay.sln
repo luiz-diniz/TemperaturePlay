@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperaturePlay.Api", "TemperaturePlay.Api\TemperaturePlay.Api.csproj", "{95468D49-0554-4AAD-8E9F-E3D77B8A820C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperaturePlay.Services", "TemperaturePlay.Services\TemperaturePlay.Services.csproj", "{E788322B-C2EC-41DA-BF3D-ED18197B7BD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95468D49-0554-4AAD-8E9F-E3D77B8A820C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95468D49-0554-4AAD-8E9F-E3D77B8A820C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95468D49-0554-4AAD-8E9F-E3D77B8A820C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95468D49-0554-4AAD-8E9F-E3D77B8A820C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E788322B-C2EC-41DA-BF3D-ED18197B7BD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E788322B-C2EC-41DA-BF3D-ED18197B7BD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E788322B-C2EC-41DA-BF3D-ED18197B7BD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E788322B-C2EC-41DA-BF3D-ED18197B7BD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF68ECE7-BC4A-47ED-BDAC-947E33BB9076}
+	EndGlobalSection
+EndGlobal
