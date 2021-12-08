@@ -8,7 +8,7 @@ namespace TemperaturePlay.Services
 {
     public interface IMusicService
     {
-        string[] GetByCity(string city);
-        string[] GetByLatLong(long lat, long longi);
+        Task<string[]> GetByCity(string city);
+        string[] GetByLatitudeLongitude(long latitude, long longitude);
     }
 }

@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TemperaturePlay.Services;
 
 namespace TemperaturePlay.Api
 {
@@ -26,6 +27,9 @@ namespace TemperaturePlay.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ApiHelper.Initialize();
+
+            services.AddSingleton<IMusicService, MusicService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
