@@ -28,6 +28,7 @@ namespace TemperaturePlay.Api
         public void ConfigureServices(IServiceCollection services)
         {
             ApiHelper.Initialize();
+            ApiHelperSpotify.Initialize();
 
             services.AddSingleton<IMusicService, MusicService>();
 

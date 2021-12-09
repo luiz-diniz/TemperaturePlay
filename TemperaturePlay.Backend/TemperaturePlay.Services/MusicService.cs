@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using TemperaturePlay.Services.Models;
@@ -10,7 +11,6 @@ namespace TemperaturePlay.Services
     public class MusicService : IMusicService
     {
         private string weatherApiKey = "b77e07f479efe92156376a8b07640ced";
-        private string spotifyClientId = "08c1a6be652e4fdca07f1815bfd167e4";
 
         public async Task<string[]> GetByCity(string city)
         {
@@ -19,11 +19,11 @@ namespace TemperaturePlay.Services
                 if (String.IsNullOrEmpty(city))
                     throw new ArgumentNullException(nameof(city), "City value is null or empty, insert a valid city name.");
 
-                var url = $"http://api.openweathermap.org/data/2.5/weather?q={city }&appid={weatherApiKey}";
+                var weatherUrl = $"http://api.openweathermap.org/data/2.5/weather?q={city }&appid={weatherApiKey}";
 
                 TemperatureResultModel temperatureResult = new TemperatureResultModel();
 
-                using (HttpResponseMessage response = await ApiHelper.Client.GetAsync(url))
+                using (HttpResponseMessage response = await ApiHelper.Client.GetAsync(weatherUrl))
                 {
                     if (response.IsSuccessStatusCode)
                     {
@@ -38,7 +38,24 @@ namespace TemperaturePlay.Services
                 var genre = GetGenreByTemperature(currentTemperature);
 
                 //TODO: Call spotify api
+
+                TrackModel tracksResult = new TrackModel();
+
+                var spotifyUrl = $"https://api.spotify.com/v1/recommendations/?seed_genres={genre}";
+
+                using (HttpResponseMessage response = await ApiHelperSpotify.Client.GetAsync(spotifyUrl))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        SpotifyReturnModel requestResult = await response.Content.ReadAsAsync<SpotifyReturnModel>();
+
+                    }
+                }
+
+
+
                 throw new NotImplementedException();
+
             }
             catch (Exception)
             {
@@ -64,13 +81,13 @@ namespace TemperaturePlay.Services
         private string GetGenreByTemperature(double temperature)
         {
             if (temperature > 30)
-                return "Party";
+                return "party";
             else if (temperature >= 15 && temperature <= 30)
-                return "Pop";
+                return "pop";
             else if (temperature >= 10 && temperature <= 14)
-                return "Rock";
+                return "rock";
             else
-                return "Classical";
+                return "classical";
         }
 
         private double ConvertKelvinToCelcius(double kelvinTemp)
