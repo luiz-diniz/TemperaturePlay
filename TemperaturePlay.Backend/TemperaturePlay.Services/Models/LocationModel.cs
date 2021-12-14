@@ -8,7 +8,7 @@ namespace TemperaturePlay.Services.Models
 {
     public class LocationModel
     {
-        public int Latitude { get; set; }
-        public int Longitude { get; set; }
+        public long Latitude { get; set; }
+        public long Longitude { get; set; }
     }
 }
