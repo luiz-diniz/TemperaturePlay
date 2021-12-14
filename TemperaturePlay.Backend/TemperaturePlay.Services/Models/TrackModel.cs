@@ -9,5 +9,6 @@ namespace TemperaturePlay.Services.Models
     public class TrackModel
     {
         public string Name { get; set; }
+        public ArtistModel[] Artists { get; set; }
     }
 }

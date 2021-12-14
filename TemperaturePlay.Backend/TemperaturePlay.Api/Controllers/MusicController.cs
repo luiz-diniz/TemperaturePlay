@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TemperaturePlay.Services;
+using TemperaturePlay.Services.Models;
 
 namespace TemperaturePlay.Api.Controllers
 {
@@ -19,18 +20,16 @@ namespace TemperaturePlay.Api.Controllers
 
         [HttpGet]
         [Route("getbycity/{city}")]
-        public string[] GetByCity(string city)
+        public SpotifyReturnModel GetByCity(string city)
         {
-            var result = _musicService.GetByCity(city);
-
-            return result.Result;
+            return _musicService.GetByCity(city).Result;
         }
 
         [HttpGet]
         [Route("getbylatlong")]
-        public string[] GetByLatLong(long lat, long longi)
+        public SpotifyReturnModel GetByLatLong(LocationModel location)
         {
-            throw new NotImplementedException();
+            return _musicService.GetByLatitudeLongitude(location.Latitude, location.Longitude).Result;
         }
     }
 }

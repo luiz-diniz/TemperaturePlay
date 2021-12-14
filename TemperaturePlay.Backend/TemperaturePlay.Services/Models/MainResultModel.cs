@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TemperaturePlay.Services.Models
 {
-    class MainResultModel
+    public class MainResultModel
     {
         public TemperatureResultModel Main { get; set; }
     }

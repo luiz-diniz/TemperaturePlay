@@ -18,7 +18,7 @@ namespace TemperaturePlay.Services
 
             Client.DefaultRequestHeaders.Accept.Clear();
             Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "abc123");
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "yourJWTtoken");
         }
     }
 }

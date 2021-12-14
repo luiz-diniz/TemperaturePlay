@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TemperaturePlay.Services.Models
 {
-    public class SpotifyReturnModel
+    public class ArtistModel
     {
-        public TrackModel[] Tracks { get; set; }
+        public string Name { get; set; }
     }
 }

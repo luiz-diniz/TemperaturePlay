@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace TemperaturePlay.Services.Models
 {
-    public class SpotifyReturnModel
+    public class LocationModel
     {
-        public TrackModel[] Tracks { get; set; }
+        public int Latitude { get; set; }
+        public int Longitude { get; set; }
     }
 }
